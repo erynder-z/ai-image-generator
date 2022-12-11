@@ -6,16 +6,20 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 const generateImage_post = async (req, res) => {
+  const { prompt, size } = req.body;
+
+  const imageSize = size === 'small' ? '256x256' : '512x512';
+
   try {
     const response = await openai.createImage({
-      prompt: 'dog on the moon barking at the earth',
+      prompt: prompt,
       n: 1,
-      size: '256x256',
+      size: imageSize,
     });
 
-    const imageURL = response.data.data[0].url;
+    const imageUrl = response.data.data[0].url;
 
-    res.status(200).json({ success: true, data: imageURL });
+    res.status(200).json({ success: true, data: imageUrl });
   } catch (err) {
     if (err.response) {
       console.log(err.response.status);
@@ -23,9 +27,10 @@ const generateImage_post = async (req, res) => {
     } else {
       console.log(err.message);
 
-      res
-        .status(400)
-        .json({ success: false, err: 'Image could not be generated' });
+      res.status(400).json({
+        success: false,
+        err: 'Image could not be generated',
+      });
     }
   }
 };
