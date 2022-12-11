@@ -1,5 +1,5 @@
 const express = require('express');
-const dotenv = require('dotenv').config();
+const env = require('dotenv').config();
 const openaiRoutes = require('./routes/openaiRoutes');
 const port = process.env.PORT || 5000;
 
