@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
+:root {
+  --background: #f4f4f4;
+  --color_bright: #f4f4f4;
+  --primary: #2f2942;
+}
+
 *,
 *::before,
 *::after {
@@ -12,6 +18,7 @@ html {
   margin: auto;
   line-height: 1.75;
   font-size: 1.25em;
+  background-color: var(--background);
 }
 
 html,
@@ -36,7 +43,7 @@ p,
 ul,
 ol {
   margin-bottom: 2em;
-  color: #1d1d1d;
+  color: var(--primary);
   font-family: sans-serif;
 }
 
@@ -46,8 +53,8 @@ ol {
   align-items: center;
   height: 3rem;
   padding: 0.5em;
-  background-color: black;
-  color: beige;
+  background-color: var(--primary);
+  color: var(--color_bright);
 }
 
 .navbar ul {
@@ -55,7 +62,7 @@ ol {
 }
 
 .navbar a {
-  color: beige;
+  color: var(--color_bright);
   text-decoration: none;
 }
 
@@ -75,6 +82,7 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-width: 40vw;
 }
 
 .form-control {
@@ -96,8 +104,8 @@ option {
   padding: 0.5rem 1rem;
   margin: 0.5rem 0;
   border: none;
-  background-color: black;
-  color: beige;
+  background-color: var(--primary);
+  color: var(--color_bright);
   font-size: 1em;
   cursor: pointer;
 }
