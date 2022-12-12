@@ -14,6 +14,12 @@ Rename the `example.env` file to `.env`.
 
 Generate an API KEY at [OpenAI](https://beta.openai.com/) and add it to the `.env` file.
 
+Clone the repo
+
+```bash
+git clone https://github.com/erynder-z/ai-image-generator.git
+```
+
 Install the dependencies
 
 ```bash
